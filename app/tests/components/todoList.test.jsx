@@ -23,7 +23,7 @@ describe('Todo List', () => {
       }];
 
       const todoList = TestUtils.renderIntoDocument(<TodoList todos={todos}/>);
-
+      
       //Stores todo components found in the todo list
       const todosComponents = TestUtils.scryRenderedComponentsWithType(todoList, Todo);
       expect(todosComponents.length).toBe(todos.length);
