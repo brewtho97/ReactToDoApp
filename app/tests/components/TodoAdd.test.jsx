@@ -23,7 +23,7 @@ describe('TodoAdd', () => {
     expect(spy).toHaveBeenCalledWith(todoText);
   });
 
-  it('should call onAddTodo with valid data', () => {
+  it('should not call onAddTodo with invalid data', () => {
     const todoText = '';
     const spy = expect.createSpy();
     const addTodo = TestUtils.renderIntoDocument(<TodoAdd onAddTodo={spy}/>);
