@@ -53,7 +53,7 @@ const TodoApp = React.createClass({
     let filteredTodos = TodoAPI.filterTodos(todos, showCompleted,searchText);
 
     return (
-      <div>
+      <div className="main-page">
         <h1 className="page-title">Todo App</h1>
       
         <div className="row">
