@@ -3,8 +3,8 @@ const {connect} = require('react-redux');
 const moment = require('moment');
 const actions = require('actions');
 
-export const Todo = React.createClass({
-  render: function () {
+export class Todo extends React.Component {
+  render() {
     const {id, text, completed, createdAt, completedAt, dispatch} = this.props;
     const todoClassName = completed ? 'todo todo-completed' : 'todo';
 
@@ -34,6 +34,6 @@ export const Todo = React.createClass({
       </div>
     );
   }
-});
+};
 
 export default connect()(Todo);

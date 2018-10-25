@@ -3,8 +3,8 @@ const {connect} = require('react-redux');
 import Todo from 'Todo';
 const TodoAPI = require('TodoAPI');
 
-export const TodoList = React.createClass({
-  render: function() {
+export class TodoList extends React.Component {
+  render() {
     const {todos, showCompleted, searchText} = this.props;
 
     const renderTodos = () => {
@@ -27,7 +27,7 @@ export const TodoList = React.createClass({
       </div>
     );
   }
-});
+};
 
 //Connects the store to the todoList component.
 export default connect(

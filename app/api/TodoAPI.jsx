@@ -32,13 +32,13 @@ module.exports = {
     //Filter by searchText
     filteredTodos = filteredTodos.filter((todo) => {
       let text = todo.text.toLowerCase();
-      return searchText.length === 0 || text.indexOf(searchText) > -1;
+      return searchText.length === 0 || text.indexOf(searchText.toLowerCase()) > -1;
     });
 
     //Sort non completed firs
     filteredTodos.sort((a,b) => {
-      //If a isn't completed and b is then put b first.
-      if (!a.completed && b.completed) {
+      
+      if (!a.completed && b.completed) { //If a isn't completed and b is then put b first.
         return -1;
       }
       else if (a.completed && !b.completed) {
