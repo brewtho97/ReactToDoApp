@@ -5,10 +5,9 @@ const actions = require('actions');
 export const TodoAdd = React.createClass({
   handleFormSubmit: function(e) {
     e.preventDefault();
-    //debugger;
+
     let {dispatch} = this.props;
     let text = this.refs.todoText.value;
-    console.log(text)
 
     if (text && text.length > 0) {
       //Clear value and call function that's passed as a prop.
