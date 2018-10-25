@@ -1,14 +1,19 @@
 const React = require('react');
+const {connect} = require('react-redux');
+const actions = require('actions');
 
-const TodoAdd = React.createClass({
+export const TodoAdd = React.createClass({
   handleFormSubmit: function(e) {
     e.preventDefault();
-    const text = this.refs.todoText.value;
+    //debugger;
+    let {dispatch} = this.props;
+    let text = this.refs.todoText.value;
+    console.log(text)
 
     if (text && text.length > 0) {
       //Clear value and call function that's passed as a prop.
       this.refs.todoText.value = '';
-      this.props.onAddTodo(text);
+      dispatch(actions.addTodo(text));
     }
     else {
       this.refs.todoText.focus();
@@ -26,4 +31,4 @@ const TodoAdd = React.createClass({
   }
 });
 
-module.exports = TodoAdd;
+export default connect()(TodoAdd);
